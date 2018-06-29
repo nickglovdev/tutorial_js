@@ -30,8 +30,14 @@ for (let i = 0; i < myList.length; i += 1) {
   myList[i].style.color = 'purple';
 }
 
-const notPurple = document.querySelectorAll('not-purple')
+const notPurple = document.querySelectorAll('.not-purple');
 
 for (let i = 0; i < notPurple.length; i += 1) {
   notPurple[i].style.color = 'red';
+}
+
+const evens = document.querySelectorAll('li:nth-child(even)');
+
+for (let i = 0; i < evens.length; i += 1) {
+  evens[i].style.backgroundColor = 'lightgray';
 }
