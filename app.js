@@ -44,10 +44,13 @@ for (let i = 0; i < evens.length; i += 1) {
 */
 const toggleList = document.querySelector('#toggleList');
 const listDiv = document.querySelector('.list')
-const input = document.querySelector('input.description');
-const p = document.querySelector('p.description');
-const button = document.querySelector('button.description');
+const descriptionButtonInput = document.querySelector('input.description');
+const descriptionButtonP = document.querySelector('p.description');
+const descriptionButton = document.querySelector('button.description');
+const addItemInput = document.querySelector('input.addItemInput');
+const addItemButton = document.querySelector('button.addItemButton');
 
+// XXX TEXT MANIPULATION
 toggleList.addEventListener('click', () => {
   if (listDiv.style.display === 'none') {
     listDiv.style.display = 'block';
@@ -57,16 +60,20 @@ toggleList.addEventListener('click', () => {
     toggleList.textContent = 'Display List';
   }
 });
-/*
-XXX TEXT MANIPULATION
-button.addEventListener('click', () => {
-  p.textContent = input.value + ':';
+
+addItemButton.addEventListener('click', () => {
+  let li = document.createElement('li');
+  li.textContent = addItemInput.value;
+});
+
+//XXX TEXT MANIPULATION
+descriptionButton.addEventListener('click', () => {
+  descriptionP.textContent = descriptionButtonInput.value + ':';
 });
 
 
-button.addEventListener('click', () => {
-  p.innerHTML = input.value + ':';
+descriptionButton.addEventListener('click', () => {
+  descriptionP.innerHTML = descriptionButtonInput.value + ':';
 });
 
-p.title = "List Description"
-*/
+//descriptionP.title = "List Description"
