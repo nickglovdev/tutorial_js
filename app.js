@@ -49,6 +49,7 @@ const descriptionButtonP = document.querySelector('p.description');
 const descriptionButton = document.querySelector('button.description');
 const addItemInput = document.querySelector('input.addItemInput');
 const addItemButton = document.querySelector('button.addItemButton');
+const removeItemButton = document.querySelector('button.removeItemButton');
 
 // XXX TEXT MANIPULATION
 toggleList.addEventListener('click', () => {
@@ -62,8 +63,17 @@ toggleList.addEventListener('click', () => {
 });
 
 addItemButton.addEventListener('click', () => {
+  let ul = document.getElementsByTagName('ul')[0];
   let li = document.createElement('li');
   li.textContent = addItemInput.value;
+  ul.appendChild(li)
+  addItemInput.value = '';
+});
+
+removeItemButton.addEventListener('click', () => {
+  let ul = document.getElementsByTagName('ul')[0];
+  let li = document.querySelector('li:last-child');
+  ul.removeChild(li)
 });
 
 //XXX TEXT MANIPULATION
@@ -74,6 +84,6 @@ descriptionButton.addEventListener('click', () => {
 
 descriptionButton.addEventListener('click', () => {
   descriptionP.innerHTML = descriptionButtonInput.value + ':';
+  descriptionButtonInput.value = '';
 });
-
 //descriptionP.title = "List Description"
